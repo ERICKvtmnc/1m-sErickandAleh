@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1 Mês de Namoro - Aleh ❤️</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Great+Vibes&family=Lora:ital@0;1&display=swap" rel="stylesheet">
+    
+    <style>
+        :root { --text-color: #4a2c0b; --primary: #8b4513; }
+        * { box-sizing: border-box; }
+        body { background: #fdf0d5; margin: 0; padding: 0; font-family: 'Dancing Script', cursive; display: flex; justify-content: center; min-height: 100vh; overflow-x: hidden; }
+
+        /* Envelope */
+        #envelope-wrapper { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #f4e8d4; display: flex; flex-direction: column; justify-content: center; align-items: center; z-index: 9999; transition: transform 0.8s ease-in-out; cursor: pointer; }
+        .envelope { width: 280px; height: 180px; background: #d4a373; position: relative; border-radius: 5px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); display: flex; justify-content: center; align-items: center; }
+        .envelope:before { content: "Abrir para Aleh ❤️"; color: white; font-size: 22px; }
+
+        /* Carta */
+        .letter-container { 
+            background: #fffef0; 
+            max-width: 800px; 
+            width: 95%; 
+            margin: 40px auto; 
+            padding: 60px 40px; 
+            border: 1px solid #d4a373; 
+            display: none; 
+            position: relative;
+            overflow: hidden; 
+        }
+        
+        .date { font-family: 'Lora', serif; text-align: right; margin-bottom: 30px; font-size: 18px; }
+        
+        /* Spider Kitty no Topo */
+        .header-wrapper { position: relative; margin-bottom: 60px; min-height: 150px; }
+        h1 { font-family: 'Great Vibes', cursive; font-size: 48px; color: var(--primary); margin: 0; padding-right: 200px; }
+        .spider-kitty-top { position: absolute; right: 0; top: -40px; width: 220px; height: auto; z-index: 5; }
+
+        /* FOTOS DO LADO - Sem molduras, sem quadrados, sem sombras */
+        .side-img { 
+            float: right; 
+            margin: 10px 0 15px 20px; 
+            width: 180px; 
+            height: auto; 
+            border: none;      /* Remove qualquer borda */
+            background: none;  /* Remove qualquer fundo */
+            box-shadow: none;  /* Remove a sombra (o quadrado bege que vc viu) */
+            max-width: 40%; 
+        }
+
+        p { font-size: 26px; line-height: 1.5; color: var(--text-color); margin-bottom: 25px; text-align: justify; }
+        .signature { font-family: 'Great Vibes', cursive; text-align: right; font-size: 42px; margin-top: 60px; color: var(--primary); }
+
+        /* Raspadinha */
+        .scratch-box { text-align: center; margin-top: 50px; clear: both; }
+        .scratch-container { position: relative; width: 300px; height: 160px; border: 2px dashed #d4a373; background: #fff; margin: 20px auto; }
+        .scratch-text { position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; text-align: center; font-size: 17px; color: #d63031; font-weight: bold; padding: 15px; font-family: sans-serif; }
+        #scratch-canvas { position: absolute; top: 0; left: 0; z-index: 10; cursor: crosshair; }
+
+        .heart { position: fixed; pointer-events: none; z-index: 999; animation: floatUp 4s linear infinite; }
+        @keyframes floatUp { 0% { transform: translateY(100vh) scale(0); opacity: 1; } 100% { transform: translateY(-10vh) scale(1.5); opacity: 0; } }
+    </style>
+</head>
+<body>
+
+    <audio id="meuAudio" loop>
+        <source src="musica.mp3" type="audio/mpeg">
+    </audio>
+
+    <div id="envelope-wrapper" onclick="openLetter()">
+        <div class="envelope"></div>
+        <p style="margin-top:20px; font-size: 22px; color: #8b4513;">Para Aleh... ❤️</p>
+    </div>
+
+    <div class="letter-container" id="main-letter">
+        <div class="date">19 de Fevereiro de 2026</div>
+        
+        <div class="header-wrapper">
+            <h1>Para Minha Princesa Aleh</h1>
+            <img src="spiderkitty.png" alt="Spider Kitty" class="spider-kitty-top">
+        </div>
+
+        <p>Querida Aleh,</p>
+        
+        <img src="spider-gwen.png" alt="Spider Gwen" class="side-img">
+
+        <p>Hoje comemoramos 1 mês de namoro! Mesmo que nosso amor tenha nascido no mundo virtual, cada conversa, cada risada e cada momento compartilhado me faz sentir mais próximo de você do que nunca, lembro da nossa primeira conversa, quando trocamos mensagens sobre nossos hobbies favoritos, e como aquilo evoluiu para horas intermináveis de conversas profundas sobre sonhos, medos e aspirações, você me cativou desde o início com sua inteligência afiada e seu senso de humor único, que sempre me faz sorrir mesmo nos dias mais difíceis.</p>
+
+        <p>Você é a minha princesa, a luz que ilumina meus dias. Não vejo a hora de transformar esse "web namoro" em algo ainda mais real e eterno, Obrigado por ser tão especial e por me fazer tão feliz, cada vez que vejo notificações de mensagens suas, meu coração acelera como se fosse a primeira vez, adoro como você compartilha detalhes do seu dia a dia, desde o café da manhã até os pequenos detalhes da escola, esses momentos me fazem sentir que estamos construindo algo sólido, mesmo à distância.</p>
+        
+        <p>Te amo mais do que palavras podem expressar, vamos celebrar muitos mais meses, anos e uma vida inteira juntos! Imagino nos caminhando de mãos dadas por uma praia ao pôr do sol, ou simplesmente assistindo a um filme abraçados no sofá, você me inspira a ser uma pessoa melhor todos os dias, com sua gentileza infinita e sua força interior. Lembro de quando a gente era apenas amigos , mas eu percebi que você 🫵, era a garota perfeita, e a que sempre pedi a Deus, vc é um diamante em meio a uma geração cheia de cobre</p>
+        
+        <p>Minha princesa, desde que você entrou na minha vida, tudo parece mais colorido e cheio de possibilidades, adoro como você me entende sem que eu precise explicar muito, e como nossas conversas fluem naturalmente, como se nos conhecesemos há anos, nesse mês que passou, aprendi tanto sobre você: seus gostos musicais, os livros que te emocionam, os filmes que te fazem rir e principalmente chorar, cada descoberta é como um presente, e eu mal posso esperar para desvendar mais camadas da sua personalidade encantadora.</p>
+        
+        <p>As vezes, fecho os olhos e imagino seu sorriso, baseado nas fotos que você me envia, e isso me aquece o coração, você é minha musa,minha princesa, minha confidente, minha melhor amiga e agora, minha namorada, esse título me enche de orgulho e alegria, obrigado por confiar em mim, por compartilhar seus segredos e por me permitir entrar no seu mundo, eu prometo cuidar do seu coração com todo o carinho que ele merece.</p>
+        
+        <p>nesse curto período, já criamos memórias inesquecíveis: as brincadeiras internas que só nós entendemos, a playlist que montamos juntos(inclusive eu tinha esquecido dela), os áudios que vc me envia, sua voz doce que me encanta, cada um desses instantes reforça o quanto nosso amor é real, mesmo que virtual por enquanto, eu sinto sua presença em cada notificação, em cada "bom dia" e "boa noite" que trocamos.</p>
+        
+        <p>Minha princesa, você me faz sonhar com um futuro onde a distância não existe mais, planejo viagens para te ver, momentos onde poderei te abraçar de verdade e sentir o calor do seu corpo, até lá, continuarei a te amar com toda a intensidade possível através das palavras e das promessas que fazemos um ao outro, você é o meu tudo, a razão pela qual acordo motivado todos os dias.</p>
+        
+        <p>Lembro da primeira vez em que eu te chamei de princesa, vc ficou toda bestinha KAKAKKA, Você me ensina a ser paciente, a valorizar os pequenos gestos e a acreditar no poder do amor à distância.</p>
+
+        <img src="nova-imagem-3.png" alt="Foto 3" class="side-img">
+
+        <p>Princesa, nesse 1 mês, você transformou minha rotina em algo mágico, as noites solitárias viraram oportunidades para te conhecer melhor, e os dias corridos ganham um brilho extra com suas mensagens carinhosas, eu te admiro por sua determinação, sua beleza interior e exterior, e pela forma como você ilumina a vida de quem está ao seu redor, incluindo a minha.</p>
+        
+        <img src="nova-imagem-4.png" alt="Foto 4" class="side-img">
+
+        <p>Eu te amo de uma forma que transcende o tempo e o espaço, vamos continuar construindo essa história linda, página por página, até que possamos escreve-la juntos no mundo real, mal posso esperar pelo dia em que direi isso tudo olhando nos seus olhos, até lá, saiba que você é o centro do meu universo.</p>
+        
+        <p>E para celebrar esse marco, prometo continuar sendo o melhor namorado que posso ser: atencioso, carinhoso e dedicado, e chato também (do meu jeito engraçadinho), vamos planejar mais aventuras virtuais e reais, criar mais memórias e fortalecer nosso laço dia após dia, você merece o mundo, e eu farei o possível para te dar isso.</p>
+        
+        <p>Minha princesa Aleh, obrigado por esse mês incrível, que venham muitos mais, cheios de amor, risadas e cumplicidade, eu te amo infinitamente.</p>
+
+        <div class="signature">Com todo o meu amor,<br>Erick</div>
+
+        <div class="scratch-box">
+            <h3 style="color: var(--primary); font-family: sans-serif;">Raspe aqui para uma surpresa...</h3>
+            <div class="scratch-container">
+                <div class="scratch-text">
+                    Não é nada não KAKA, só passando pra avisar que o Coringa🙅 é melhor que o Batman🦇, e o Flamengo❤️🖤 é melhor e maior que o bostafogo🖤🤍
+                </div>
+                <canvas id="scratch-canvas" width="300" height="160"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openLetter() {
+            var audio = document.getElementById("meuAudio");
+            audio.play().catch(() => {});
+            document.getElementById('envelope-wrapper').style.transform = 'translateY(-110%)';
+            document.getElementById('main-letter').style.display = 'block';
+            initScratch();
+        }
+
+        function initScratch() {
+            const canvas = document.getElementById('scratch-canvas');
+            const ctx = canvas.getContext('2d');
+            ctx.fillStyle = '#b2bec3';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = '#636e72';
+            ctx.font = '20px Arial';
+            ctx.textAlign = 'center';
+            ctx.fillText('Raspe aqui ❤️', 150, 85);
+            let isDrawing = false;
+            function scratch(e) {
+                if (!isDrawing) return;
+                const rect = canvas.getBoundingClientRect();
+                const x = (e.clientX || (e.touches ? e.touches[0].clientX : 0)) - rect.left;
+                const y = (e.clientY || (e.touches ? e.touches[0].clientY : 0)) - rect.top;
+                ctx.globalCompositeOperation = 'destination-out';
+                ctx.beginPath();
+                ctx.arc(x, y, 25, 0, Math.PI * 2);
+                ctx.fill();
+            }
+            canvas.addEventListener('mousedown', () => isDrawing = true);
+            canvas.addEventListener('touchstart', (e) => { isDrawing = true; e.preventDefault(); });
+            window.addEventListener('mouseup', () => isDrawing = false);
+            window.addEventListener('touchend', () => isDrawing = false);
+            canvas.addEventListener('mousemove', scratch);
+            canvas.addEventListener('touchmove', (e) => { scratch(e); e.preventDefault(); });
+        }
+
+        setInterval(() => {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.innerHTML = '❤️';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.fontSize = (Math.random() * 20 + 10) + 'px';
+            document.body.appendChild(heart);
+            setTimeout(() => heart.remove(), 4000);
+        }, 500);
+    </script>
+</body>
+</html>
+
